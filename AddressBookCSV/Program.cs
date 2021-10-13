@@ -40,6 +40,7 @@ namespace AddressBookCSV
                 Console.WriteLine("9. Sort Entries by Person name");
                 Console.WriteLine("10.Read or write addressbook contacts using File IO");
                 Console.WriteLine("11.Read or write addressbook contacts using CSV file");
+                Console.WriteLine("12.Read or write addressbook contacts using JSON file");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -148,6 +149,11 @@ namespace AddressBookCSV
                         handler.WriteToCsv(addressBook.addressBookDictionary);
                         handler.ReadFromCSV();
 
+                        break;
+                    case 12:
+                        ReadWriteJson json = new ReadWriteJson();
+                        json.WriteToFile(addressBook.addressBookDictionary);
+                        json.ReadFromFile();
                         break;
 
                     default:
